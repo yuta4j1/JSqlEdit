@@ -1,0 +1,47 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.BorderPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<BorderPane fx:controller="application.Controller" xmlns:fx="http://javafx.com/fxml">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+    <top>
+        <Label style="-fx-font: NORMAL 20 Tahoma;" text="Create"></Label>
+    </top>
+    <Separator orientation="VERTICAL" prefHeight="25.0" prefWidth="0.0" />
+    <left>
+        <VBox>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+            <Label style="-fx-font-weight: bold;" text="Query"></Label>
+            <ListView prefWidth="100" prefHeight="120">
+                <Hyperlink text="create"/>
+                <Hyperlink text="read"/>
+                <Hyperlink text="update"/>
+                <Hyperlink text="delete"/>
+            </ListView>
+        </VBox>
+    </left>
+    <center>
+        <HBox alignment="BOTTOM_CENTER">
+            <TextField fx:id="selectedFilePath" promptText="select file"/>
+            <Button text="選択" onAction="#showFileChooserDialog"/>
+        </HBox>
+    </center>
+    <bottom>
+        <HBox alignment="BASELINE_RIGHT">
+            <Button text="execute"></Button>
+            <Button text="cancel"></Button>
+        </HBox>
+
+    </bottom>
+</BorderPane>
